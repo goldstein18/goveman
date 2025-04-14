@@ -1,0 +1,35 @@
+/* Reset default margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Allow scrolling */
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    font-family: sans-serif;
+}
+
+/* Each section fills the full viewport */
+.fullscreen-image {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    overflow: hidden;
+
+}
+
+/* Media inside fills and stays centered */
+.fullscreen-image img,
+.fullscreen-image video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    transform: translate(-50%, -50%);
+}
