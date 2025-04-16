@@ -33,3 +33,43 @@ html, body {
     object-fit: contain;
     transform: translate(-50%, -50%);
 }
+
+
+/* Default Styles for Desktop */
+.image1 {
+    content: url('assets1920/asset1.png');
+}
+
+.image3 {
+    content: url('assets1920/asset3.png');
+}
+
+.video {
+    content: url('https://pub-cc3271b4c7304a95a90f75bfbdd6983f.r2.dev/asset2.mp4');
+}
+
+/* Mobile and Tablet Styles */
+@media (max-width: 768px) {
+    /* For mobile and tablets */
+    .image1 {
+        content: url('assets1024/asset1.png'); /* Replace with the mobile version of image1 */
+    }
+    
+    .image3 {
+        content: url('assets1024/asset2.png'); /* Replace with the mobile version of image3 */
+    }
+
+   
+}
+
+@media (max-width: 480px) {
+    /* Additional styling for very small devices like phones in portrait mode */
+    .image1 {
+        content: url('assets768/asset1.png'); /* Replace with a different version of image1 if needed */
+    }
+    
+    .image3 {
+        content: url('assets768/asset2.png'); /* Replace with a different version of image3 if needed */
+    }
+   
+}
