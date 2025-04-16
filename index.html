@@ -11,19 +11,41 @@
     </head>
     <body>
         <section class="fullscreen-image" id="image1">
-            <img src="assets1920/asset1.png" alt="Nature Image">
+            <img src="assets1920/asset1.png" alt="Nature Image" class="image1">
         </section>
         
         <section class="fullscreen-image" id="image2">
-            <video autoplay muted loop playsinline>
+            <video  id="videoElement" autoplay muted loop playsinline>
                 <source src="https://pub-cc3271b4c7304a95a90f75bfbdd6983f.r2.dev/asset2.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </section>
         
         <section class="fullscreen-image" id="image3">
-            <img src="assets1920/asset3.png" alt="Ocean Image">
+            <img src="assets1920/asset3.png" alt="Ocean Image" class="image3">
         </section>
+
+        <script>
+            function replaceMediaForDevices() {
+                // Get the video element
+                const videoElement = document.getElementById('videoElement');
+                
+                // Check if the screen width is less than 768px (mobile/tablet)
+                if (window.innerWidth <= 768) {
+                    // Replace the video source for smaller devices
+                    videoElement.src = "assets768/video.mp4";
+                } else {
+                    // Default desktop video source
+                    videoElement.src = "https://pub-cc3271b4c7304a95a90f75bfbdd6983f.r2.dev/asset2.mp4";
+                }
+            }
+    
+            // Call the function on page load
+            window.onload = replaceMediaForDevices;
+    
+            // Call the function whenever the window is resized (for responsiveness)
+            window.onresize = replaceMediaForDevices;
+        </script>
         
         <script src="" async defer></script>
     </body>
