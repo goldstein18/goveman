@@ -70,6 +70,17 @@ html, body {
     
     .image3 {
         content: url('assets768/asset2.png'); /* Replace with a different version of image3 if needed */
+   
     }
+    .fullscreen-image img,
+.fullscreen-image video {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    transform: translate(-50%, -50%);
+}
    
 }
