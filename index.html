@@ -1,52 +1,101 @@
 <!DOCTYPE html>
-
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Goveman</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <section class="fullscreen-image" id="image1">
-            <img src="assets1920/asset1.png" alt="Nature Image" class="image1">
-        </section>
-        
-        <section class="fullscreen-image" id="image2">
-            <video  id="videoElement" autoplay muted loop playsinline>
-                <source src="https://pub-cc3271b4c7304a95a90f75bfbdd6983f.r2.dev/asset2.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </section>
-        
-        <section class="fullscreen-image" id="image3">
-            <img src="assets1920/asset3.png" alt="Ocean Image" class="image3">
-        </section>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Goveman</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
 
-        <script>
-            function replaceMediaForDevices() {
-                // Get the video element
-                const videoElement = document.getElementById('videoElement');
-                
-                // Check if the screen width is less than 768px (mobile/tablet)
-                if (window.innerWidth <= 768) {
-                    // Replace the video source for smaller devices
-                    videoElement.src = "assets768/video.mp4";
-                } else {
-                    // Default desktop video source
-                    videoElement.src = "https://pub-cc3271b4c7304a95a90f75bfbdd6983f.r2.dev/asset2.mp4";
-                }
-            }
-    
-            // Call the function on page load
-            window.onload = replaceMediaForDevices;
-    
-            // Call the function whenever the window is resized (for responsiveness)
-            window.onresize = replaceMediaForDevices;
-        </script>
+    <style>
+        .carousel-container {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 50px;
+            padding: 20px;
+            background: #f5f5f5;
+            
+        }
+
+        .carousel-container img {
+            height: 100px;
+            flex: 0 0 auto;
+            scroll-snap-align: start;
+            border-radius: 10px;
         
-        <script src="" async defer></script>
-    </body>
+        }
+
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 999;
+            background-color: #25D366;
+            border-radius: 50%;
+            padding: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .whatsapp-button img {
+            width: 30px;
+            height: 30px;
+        }
+
+        /* Optional: smooth scroll for carousel */
+        .carousel-container::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <section class="fullscreen-image" id="image1">
+        <img src="assets1920/asset1.png" alt="Nature Image" class="image1">
+    </section>
+
+    <!-- Carousel Section -->
+    <section class="carousel-container">
+        <img src="brands-size/1.png" alt="Thumb 4">
+        <img src="brands-size/2.png" alt="Thumb 1">
+        <img src="brands-size/3.png" alt="Thumb 2">
+        <img src="brands-size/4.png" alt="Thumb 3">
+        <img src="brands-size/5.svg.png" alt="Thumb 4">
+        <img src="brands-size/6.png" alt="Thumb 1">
+        <img src="brands-size/7.png" alt="Thumb 2">
+        <img src="brands-size/8.png" alt="Thumb 3">
+        <img src="brands-size/9.png" alt="Thumb 4">
+    </section>
+
+    <section class="fullscreen-image" id="image2">
+        <video id="videoElement" autoplay muted loop playsinline>
+            <source src="https://pub-cc3271b4c7304a95a90f75bfbdd6983f.r2.dev/asset2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </section>
+
+    <section class="fullscreen-image" id="image3">
+        <img src="assets1920/asset3.png" alt="Ocean Image" class="image3">
+    </section>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/1234567890" target="_blank" class="whatsapp-button">
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png" alt="WhatsApp Icon">
+    </a>
+
+    <script>
+        function replaceMediaForDevices() {
+            const videoElement = document.getElementById('videoElement');
+            if (window.innerWidth <= 768) {
+                videoElement.src = "assets768/video.mp4";
+            } else {
+                videoElement.src = "https://pub-cc3271b4c7304a95a90f75bfbdd6983f.r2.dev/asset2.mp4";
+            }
+        }
+
+        window.onload = replaceMediaForDevices;
+        window.onresize = replaceMediaForDevices;
+    </script>
+</body>
 </html>
