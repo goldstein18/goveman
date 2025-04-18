@@ -19,7 +19,8 @@ html, body {
     width: 100vw;
     position: relative;
     overflow: hidden;
-
+    margin: 0;
+    padding: 0;
 }
 
 /* Media inside fills and stays centered */
@@ -34,6 +35,12 @@ html, body {
     transform: translate(-50%, -50%);
 }
 
+/* Carousel section */
+.carousel-container {
+    height: 120px;
+    margin: 0;
+    padding: 0;
+}
 
 /* Default Styles for Desktop */
 .image1 {
@@ -50,42 +57,58 @@ html, body {
 
 /* Mobile and Tablet Styles */
 @media (max-width: 768px) {
-    /* For mobile and tablets */
     .image1 {
-        content: url('assets1024/asset1.png'); /* Replace with the mobile version of image1 */
+        content: url('assets1024/asset1.png');
     }
     
     .image3 {
-        content: url('assets1024/asset2.png'); /* Replace with the mobile version of image3 */
+        content: url('assets1024/asset2.png');
     }
 
-   
+    .carousel-container {
+        height: 100px;
+    }
 }
 
 @media (max-width: 480px) {
-    /* Additional styling for very small devices like phones in portrait mode */
     .image1 {
-        content: url('assets768/asset1.png'); /* Replace with a different version of image1 if needed */
+        content: url('assets768/asset1.png');
     }
     
     .image3 {
-        content: url('assets768/asset2.png'); /* Replace with a different version of image3 if needed */
-   
+        content: url('assets768/asset2.png');
     }
+
+    .fullscreen-image {
+        height: 100vh;
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+    }
+
     .fullscreen-image img,
-.fullscreen-image video {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    height: 100%;
-    width: 100%;
-    object-fit: contain;
-    transform: translate(-50%, -50%);
-}
-   
+    .fullscreen-image video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+        transform: translate(-50%, -50%);
+    }
+
+    .carousel-container {
+        height: 80px;
+    }
+
+    section {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+    }
 }
 
-
-section {
-    margin: 0;
+section img {
+    border:2px solid green;
 }
+
