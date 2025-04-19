@@ -68,6 +68,10 @@ html, body {
     .carousel-container {
         height: 100px;
     }
+    .carousel-container img {
+        height: 100%;
+    }
+
 }
 
 @media (max-width: 480px) {
