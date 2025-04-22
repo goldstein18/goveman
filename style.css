@@ -111,10 +111,23 @@ html, body {
         height: 100%;
     }
 
-    section {
-        margin: 0;
-        padding: 0;
-        height: 100vh;
+    .fullscreen-image {
+        height: 520px;
+    }
+
+    .carousel-section {
+        height: auto;
+        padding: 10px 0;
+    }
+
+    .carousel-container {
+        height: 80px;
+        max-width: 100vw;
+        padding: 10px;
+    }
+
+    .carousel-container img {
+        height: 100%;
     }
 }
 
@@ -129,7 +142,7 @@ html, body {
     display: flex;
     gap: 20px;
     padding: 10px;
-    animation: scrollCarousel 30s linear infinite;
+    animation: scrollCarousel 10s linear infinite;
     width: max-content;
 }
 
@@ -140,4 +153,9 @@ html, body {
     100% {
         transform: translateX(-50%);
     }
+}
+.carousel-section {
+    height: auto;
+    min-height: unset;
+    padding: 10px 0;
 }
