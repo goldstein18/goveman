@@ -119,3 +119,25 @@ html, body {
 }
 
 
+
+.carousel-wrapper {
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-container {
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+    animation: scrollCarousel 30s linear infinite;
+    width: max-content;
+}
+
+@keyframes scrollCarousel {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
