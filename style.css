@@ -9,7 +9,7 @@
 html, body {
     height: 100%;
     width: 100%;
-    overflow-x: hidden; /* Prevent horizontal scroll */
+    overflow-x: hidden;
     font-family: sans-serif;
 }
 
@@ -21,7 +21,6 @@ html, body {
     overflow: hidden;
 }
 
-/* Media inside fills and stays centered */
 .fullscreen-image img,
 .fullscreen-image video {
     position: absolute;
@@ -56,7 +55,7 @@ html, body {
     border-radius: 10px;
 }
 
-/* Animation */
+/* Animation desktop */
 @keyframes scroll {
     0% {
         transform: translateX(0);
@@ -87,10 +86,21 @@ html, body {
 
     .carousel-container {
         gap: 30px;
+        animation: scrollMobile 20s linear infinite;
     }
 
     .carousel-container img {
         height: 80px;
+    }
+}
+
+/* Animation Mobile */
+@keyframes scrollMobile {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
     }
 }
 
@@ -113,19 +123,5 @@ html, body {
 
     .carousel-container img {
         height: 70px;
-    }
-}
-@media (max-width: 768px) {
-    .carousel-container {
-        animation: scrollMobile 20s linear infinite;
-    }
-}
-
-@keyframes scrollMobile {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-100%);
     }
 }
