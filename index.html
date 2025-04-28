@@ -1,54 +1,69 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Goveman</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
 
     <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .carousel-wrapper {
+            overflow: hidden;
+            width: 100%;
+            background: #fff;
+            padding: 20px 0;
+        }
+
         .carousel-container {
             display: flex;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            gap: 20px;
-            padding: 10px;
-          
-            height: 120px;
-            margin: 0;
+            width: max-content;
+            animation: scroll 30s linear infinite;
+            gap: 40px;
         }
 
         .carousel-container img {
             height: 100px;
-            flex: 0 0 auto;
-            scroll-snap-align: start;
+            flex-shrink: 0;
             border-radius: 10px;
         }
 
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* WhatsApp Floating Button */
         .whatsapp-button {
             position: fixed;
             bottom: 20px;
             right: 20px;
             z-index: 999;
-         
             border-radius: 50%;
             padding: 15px;
-        
         }
 
         .whatsapp-button img {
-            width: 50px;
-            height: 50px;
+            width: 80px;
+            height: 80px;
         }
 
-        /* Optional: smooth scroll for carousel */
-        .carousel-container::-webkit-scrollbar {
+        /* Hide scrollbar */
+        .carousel-wrapper::-webkit-scrollbar {
             display: none;
         }
     </style>
 </head>
+
 <body>
 
     <section class="fullscreen-image" id="image1" style="padding-top:50px;">
@@ -56,25 +71,36 @@
     </section>
 
     <!-- Carousel Section -->
-    <section class="carousel-wrapper carousel-section">
+    <section class="carousel-wrapper">
+        <div class="carousel-container">
+            <!-- Para hacer un loop perfecto, duplicamos las imágenes -->
+            <img src="brands-size/1.png" alt="Thumb 1">
+            <img src="brands-size/2.png" alt="Thumb 2">
+            <img src="brands-size/3.png" alt="Thumb 3">
+            <img src="brands-size/4.png" alt="Thumb 4">
+            <img src="brands-size/5.svg.png" alt="Thumb 5">
+            <img src="brands-size/6.png" alt="Thumb 6">
+            <img src="brands-size/7.png" alt="Thumb 7">
+            <img src="brands-size/8.png" alt="Thumb 8">
+            <img src="brands-size/9.png" alt="Thumb 9">
 
-        <div class="carousel-container" id="autoCarousel">
-            <img src="brands-size/1.png" alt="Thumb 4">
-            <img src="brands-size/2.png" alt="Thumb 1">
-            <img src="brands-size/3.png" alt="Thumb 2">
-            <img src="brands-size/4.png" alt="Thumb 3">
-            <img src="brands-size/5.svg.png" alt="Thumb 4">
-            <img src="brands-size/6.png" alt="Thumb 1">
-            <img src="brands-size/7.png" alt="Thumb 2">
-            <img src="brands-size/8.png" alt="Thumb 3">
-            <img src="brands-size/9.png" alt="Thumb 4">
+            <!-- Duplicamos las imágenes para efecto infinito -->
+            <img src="brands-size/1.png" alt="Thumb 1">
+            <img src="brands-size/2.png" alt="Thumb 2">
+            <img src="brands-size/3.png" alt="Thumb 3">
+            <img src="brands-size/4.png" alt="Thumb 4">
+            <img src="brands-size/5.svg.png" alt="Thumb 5">
+            <img src="brands-size/6.png" alt="Thumb 6">
+            <img src="brands-size/7.png" alt="Thumb 7">
+            <img src="brands-size/8.png" alt="Thumb 8">
+            <img src="brands-size/9.png" alt="Thumb 9">
         </div>
     </section>
 
     <section class="fullscreen-image" id="image2">
         <video id="videoElement" autoplay muted loop playsinline>
             <source src="https://pub-cc3271b4c7304a95a90f75bfbdd6983f.r2.dev/asset2.mp4" type="video/mp4">
-            Your browser does not support the video tag.
+            Tu navegador no soporta videos.
         </video>
     </section>
 
@@ -84,8 +110,7 @@
 
     <!-- WhatsApp Floating Button -->
     <a href="https://wa.me/525531735483" target="_blank" class="whatsapp-button">
-       <!-- <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png" alt="WhatsApp Icon"> -->
-       <img src="brands-size/whatsapp.png" alt="WhatsApp Icon">
+        <img src="brands-size/whatsapp.png" alt="WhatsApp Icon">
     </a>
 
     <script>
