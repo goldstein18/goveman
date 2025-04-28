@@ -115,3 +115,17 @@ html, body {
         height: 70px;
     }
 }
+@media (max-width: 768px) {
+    .carousel-container {
+        animation: scrollMobile 20s linear infinite;
+    }
+}
+
+@keyframes scrollMobile {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
